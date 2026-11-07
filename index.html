@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Shivam! 🎂</title>
+<style>
+:root{--pink:#ff4f9a;--purple:#7857ff;--gold:#ffd166}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#fff;background:radial-gradient(circle at 15% 15%,#5731a8 0,transparent 35%),radial-gradient(circle at 85% 80%,#a72d79 0,transparent 32%),linear-gradient(135deg,#140d35,#24104b 55%,#100d2e);overflow-x:hidden}
+main{min-height:100vh;display:grid;place-items:center;padding:28px 16px;position:relative;isolation:isolate}
+.card{width:min(720px,100%);padding:clamp(28px,6vw,58px) 24px;text-align:center;border:1px solid #ffffff35;border-radius:32px;background:#ffffff12;box-shadow:0 25px 90px #08031f88;backdrop-filter:blur(14px);position:relative;z-index:2}
+.tag{display:inline-block;padding:8px 15px;border-radius:99px;background:#ffffff18;border:1px solid #ffffff35;letter-spacing:2px;font-size:.76rem;text-transform:uppercase}
+.cake{font-size:clamp(70px,15vw,112px);margin:16px 0 2px;filter:drop-shadow(0 10px 20px #ff4f9a55);animation:bob 2.8s ease-in-out infinite}
+h1{font-size:clamp(2.5rem,9vw,5.3rem);line-height:1.02;margin:12px 0;background:linear-gradient(90deg,#fff,#ffd166,#ff8fbd);background-clip:text;color:transparent;text-shadow:0 8px 35px #ff4f9a22}
+.name{font-size:clamp(2rem,7vw,3.7rem);font-weight:900;color:#fff;margin:0 0 18px;letter-spacing:1px}
+p{font-size:clamp(1rem,2.5vw,1.18rem);line-height:1.8;color:#eee4ff;max-width:570px;margin:0 auto}
+.divider{width:90px;height:4px;border-radius:9px;background:linear-gradient(90deg,var(--pink),var(--gold));margin:25px auto}
+.wish{font-size:1.08rem}
+button{margin-top:28px;border:0;border-radius:999px;padding:15px 25px;font-size:1rem;font-weight:800;color:#321044;background:linear-gradient(100deg,#ffd166,#ff8fbd);box-shadow:0 9px 25px #ff4f9a44;cursor:pointer;transition:transform .2s,box-shadow .2s}
+button:hover{transform:translateY(-3px);box-shadow:0 14px 32px #ff4f9a66}
+#surprise{display:none;margin:24px auto 0;padding:18px;border-radius:18px;background:#ffffff18;border:1px solid #ffffff30;max-width:520px;color:#fff;line-height:1.7}
+footer{margin-top:30px;color:#d7c8f4;font-size:.85rem}
+.star{position:fixed;width:5px;height:5px;background:#fff;border-radius:50%;opacity:.7;animation:twinkle 3s infinite alternate;z-index:0}
+.confetti{position:fixed;top:-15px;width:9px;height:15px;z-index:5;animation:fall linear forwards;pointer-events:none}
+@keyframes bob{50%{transform:translateY(-12px) rotate(3deg)}}
+@keyframes twinkle{to{opacity:.15;transform:scale(.5)}}
+@keyframes fall{to{transform:translateY(110vh) rotate(720deg);opacity:.9}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+  <section class="card">
+    <span class="tag">A special day • Just for you</span>
+    <div class="cake" aria-hidden="true">🎂</div>
+    <h1>Happy Birthday</h1>
+    <div class="name">Shivam! 🎉</div>
+    <p class="wish">Aaj ka din tumhare naam! Tumhari life khushiyon, success, achhi health aur unforgettable memories se bhari rahe. Har naya sapna poora ho aur chehre par hamesha smile bani rahe.</p>
+    <div class="divider"></div>
+    <p>Keep shining, keep smiling, and enjoy every moment. You deserve all the happiness in the world! 💖</p>
+    <button id="surpriseBtn" type="button">Open Your Surprise 🎁</button>
+    <div id="surprise">🥳 Surprise, Shivam!<br>May this year bring you new adventures, big achievements, loyal friends and countless reasons to celebrate. Have an amazing birthday!</div>
+    <footer>Made with ❤️ specially for Shivam</footer>
+  </section>
+</main>
+<script>
+for(let i=0;i<45;i++){
+  const s=document.createElement('span');s.className='star';
+  s.style.left=Math.random()*100+'vw';s.style.top=Math.random()*100+'vh';
+  s.style.animationDelay=Math.random()*3+'s';document.body.appendChild(s);
+}
+function celebrate(){
+  const colors=['#ff4f9a','#ffd166','#7cf7d4','#9b8cff','#ffffff'];
+  for(let i=0;i<100;i++){
+    const c=document.createElement('i');c.className='confetti';
+    c.style.left=Math.random()*100+'vw';c.style.background=colors[Math.floor(Math.random()*colors.length)];
+    c.style.animationDuration=(2.5+Math.random()*3)+'s';c.style.animationDelay=Math.random()*.7+'s';
+    c.style.transform='rotate('+Math.random()*360+'deg)';
+    document.body.appendChild(c);setTimeout(()=>c.remove(),6500);
+  }
+  document.getElementById('surprise').style.display='block';
+  document.getElementById('surpriseBtn').textContent='Celebrate Again 🎊';
+}
+document.getElementById('surpriseBtn').addEventListener('click',celebrate);
+</script>
+</body>
+</html>
